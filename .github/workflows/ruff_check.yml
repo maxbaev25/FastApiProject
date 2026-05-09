@@ -26,6 +26,7 @@ jobs:
         run: ruff check --show-fixes > results.txt
 
       - name: Send Results
+        if: always()
         uses: marocchino/sticky-pull-request-comment@v3
         with:
           path: results.txt
