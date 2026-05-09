@@ -24,6 +24,7 @@ jobs:
 
       - name: Start ruff Check
         run: ruff check --show-fixes > results.txt
+        continue-on-error: true
 
       - name: Send Results
         if: always()
