@@ -38,8 +38,8 @@ jobs:
         with:
           path: results.txt
           message: |
-            ```
             Результаты проверки кода этого PR с помощью ruff:
+            ```
             {{{content}}}
             ```
 
