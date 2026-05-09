@@ -10,9 +10,15 @@ on:
 jobs:
   ruff_job:
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+
     steps:
-      - name: Clone
+      - name: Clone PR code safely
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
 
       - name: Install Python
         uses: actions/setup-python@v6
