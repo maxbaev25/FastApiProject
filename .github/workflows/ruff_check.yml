@@ -29,10 +29,11 @@ jobs:
 
       - name: Send Results
         if: always()
-        uses: marocchino/sticky-pull-request-comment@v3
+        uses: mshick/add-pr-comment@v2
         with:
-          path: results.txt
-          header: "Результаты проверки кода этого PR с помощью ruff:"
+          message-path: results.txt
+          message: |
+            Результаты проверки кода этого PR с помощью ruff:
 
       - name: Finish Job
         if: always()
