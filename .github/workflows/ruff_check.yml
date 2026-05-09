@@ -28,7 +28,12 @@ jobs:
       - name: Send Results
         uses: marocchino/sticky-pull-request-comment@v3
         with:
-          message: cat results.txt
+          path: results.txt
+          message: |
+            Результаты проверки кода этого PR с помощью ruff:
+            ```
+            {{{content}}}
+            ```
 
       - name: Finish Job
         if: always()
