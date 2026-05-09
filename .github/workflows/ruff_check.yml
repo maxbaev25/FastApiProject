@@ -29,12 +29,10 @@ jobs:
 
       - name: Send Results
         if: always()
-        uses: mshick/add-pr-comment@v2
+        uses: marocchino/sticky-pull-request-comment@v3
         with:
-          message-path: results.txt
-          message: |
-            Результаты проверки кода этого PR с помощью ruff:
-
+          path: results.txt
+          header: "Результаты проверки кода этого PR с помощью ruff:"
       - name: Finish Job
         if: always()
         run: echo Ruff Job Has Finished
